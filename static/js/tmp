@@ -1,0 +1,123 @@
+function start1(flowNum){
+    alert('1');
+    var xmWBSwlh="";
+    var wbsqrr="";
+    var sfqrwbs="";
+    var xcsfbg="";
+    var subField="";
+    if(flowNum=="1_1"){
+        xmWBSwlh="";
+        wbsqrr="";
+        sfqrwbs="false";
+        xcsfbg="否";
+        subField="[]";
+    }else if(flowNum=="1_2"){
+        xmWBSwlh="";
+        wbsqrr="";
+        sfqrwbs="false";
+        xcsfbg="否";
+        subField='[{"xccfsj":"2017-05-09+10:18:00","xcddsj":"2017-06-02+10:18:00","xcddd":"广州","xcdddw":"广州分公司",\
+        "xctlqssj":"2017-05-09+10:18:00","xctlzzsj":"2017-06-03+10:18:00","xcsfpc":"是","xcjtgjlx":"普通列车硬座",\
+        "xcjtbxfy":"1221","xczsbzfy":"0.00","xczsbxfy":"","xcbz":"出差明细+","id":""}]';
+    }
+
+
+    {"main":{"fields":{"ssdw":"制造本部物流中心","ssdwID":"105040201","ccrID":"10500089559","ccr":"李伟豪+","ygh":"010500089559","zwzc":"其他人员","fygkbm":"制造本部物流中心","fygkbmID":"105040201","lxfs":"13212321232","ccsy":"1_2无wbs签认，包干，有差旅报销单","ccgjksrq":"2017-05-09","ccgjzzrq":"2017-06-03","ccksdd":"北京","cczzdd":"天津","cczd":"广州","gsfy":"1321","jtgj":"普通列车硬座","dddw":"中软广州分公司","ccsm":"","xmWBSwlh":"","wbsqrr":"","ckrxm":"王林","zxqh":"123212321232123431","fj":"1","ndzys":"","sjfse":"","dbxze":"","syed":"","bmshldID":"10500089680","bmshld":"王雪","bmspldID":"10500017751","bmspld":"胡安祖","fygkbmldID":"10500017751","fygkbmld":"胡安祖","gsfgspldID":"10500014189","gsfgspld":"田学华","sfczsqsp":"false","bxyccjzqts":"-30","ccsqjtgjsfcb":"false","zsfsbsx":"false","ccts":"0","cbzsfbzje":"0.00","zsfybxje":"0.00","zsfsjbxje":"0.00","jzfybxje":"1221.00","jtfsjbxje":"1221.00","czcfyybxje":"","czcfysjbxje":"","qtfybxje":"","qtfysjbxje":"","btje":"0.00","fyzjdx":"壹仟贰佰贰拾壹元","fyzjxx":"1221.00","zsfsbsxxk":"","cbzsfbxje":"0","cbzsfsm":"","cbzsfldspjg":"agree","cbjtfbxje":"0","cbjtfsm":"","cbjtfldspjg":"agree","cbqtfybxje":"0","cbqtfysm":"","cbqtfyldspjg":"agree","xgfj":"[{\"id\":\"10000065430463\",\"name\":\"A.class\"}]","jtgjdcsc":"双程","sfqrwbs":"false","xcsfbg":"是","sfcywhjk":"是否存有未还借款","sftxccbxd":"true","txcbsx":""}},
+    "sub":[{"tableName":"subtable_gnccspbxbd","fields":[{"xccfsj":"2017-05-09+10:18:00","xcddsj":"2017-06-02+10:18:00","xcddd":"广州","xcdddw":"广州分公司","xctlqssj":"2017-05-09+10:18:00","xctlzzsj":"2017-06-03+10:18:00","xcsfpc":"是","xcjtgjlx":"普通列车硬座","xcjtbxfy":"1221","xczsbzfy":"0.00","xczsbxfy":"","xcbz":"出差明细+","id":""}]}],"opinion":[],"bianhao":[]}
+
+
+
+	var result='<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" \
+	xmlns:impl="http://impl.webservice.platform.hotent.com/"><soapenv:Header/><soapenv:Body><impl:start> <xml>&lt;';
+	result+='req actDefId="" flowKey="gnccspjclfbxlc" subject="" \
+	account="010500088803" businessKey="">&lt;data>   &lt;![CDATA[{';
+	result+= '"main":{"fields":{"ssdw":"总部质量管理部","ssdwID":"1050010","ccrID":"10500088803","ccr":"毛瑞兵",\
+	"ygh":"010500088803","zwzc":"其他人员","fygkbm":"总部质量管理部","fygkbmID":"1050010","lxfs":"15456723542",\
+	"ccsy":"01无wbs签认，非包干，无差旅报销单","ccgjksrq":"2017-04-04","ccgjzzrq":"2017-04-25","ccksdd":"北京",\
+	"cczzdd":"天津","cczd":"上海","gsfy":"1342","jtgj":"普通列车硬座","dddw":"中软广州分公司","ccsm":"飞机","xmWBSwlh":"';
+	result+=xmWBSwlh;
+	result+='","wbsqrr":"';
+	result+=wbsqrr;
+	result+='","ckrxm":"王明","zxqh":"9809098789097654","fj":"1","ndzys":"","sjfse":"","dbxze":"","syed":"",\
+	"bmshldID":"10000050828381","bmshld":"万国龙","bmspldID":"10500015024","bmspld":"宋晓文","fygkbmldID":"10500015024",\
+	"fygkbmld":"宋晓文","gsfgspldID":"10500015906","gsfgspld":"梁建英","sfczsqsp":"true","bxyccjzqts":"",\
+	"ccsqjtgjsfcb":"false","zsfsbsx":"false","ccts":"","cbzsfbzje":"","zsfybxje":"","zsfsjbxje":"","jzfybxje":"",\
+	"jtfsjbxje":"","czcfyybxje":"","czcfysjbxje":"","qtfybxje":"","qtfysjbxje":"","btje":"","fyzjdx":"零元",\
+	"fyzjxx":"0.00","txcbsx":"","zsfsbsxxk":"","cbzsfbxje":"0","cbzsfsm":"","cbzsfldspjg":"agree","cbjtfbxje":"0",\
+	"cbjtfsm":"","cbjtfldspjg":"agree","cbqtfybxje":"0","cbqtfysm":"","cbqtfyldspjg":"agree","xgfj":"",\
+	"jtgjdcsc":"单程","sfqrwbs":"false","xcsfbg":"否","sfcywhjk":"","sftxccbxd":""}},\
+	"sub":[{"tableName":"subtable_gnccspbxbd","fields":[]}],"opinion":[],"bianhao":[]}   ]]&gt;  &lt;/data>  \
+	 &lt;/req>';
+	result+='</xml></impl:start></soapenv:Body></soapenv:Envelope>';
+
+	$.ajax({
+        type: 'POST',
+        headers: {
+                    'Content-Type':'text/plain;charset=UTF-8'
+                },
+        url:'http://122.4.80.27:8081/csrbpm/service/ProcessService',
+        data:result,
+        success: function(data) {
+            var tmp=data.getElementsByTagName("return")[0].childNodes[0].nodeValue;
+            if(tmp.indexOf("false")>=0){
+                alert('表单验证失败，请检查表单是否正确填写！');
+            }else if(tmp.indexOf("run")>=0){
+                alert('流程启动成功');
+
+            }else {
+            }
+        },
+        failure : function(response)
+        {
+            alert('无法连接服务器');
+        }
+    });
+}
+$("#start1_1").click(function(){
+    alert('1');
+	var result='<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" \
+	xmlns:impl="http://impl.webservice.platform.hotent.com/"><soapenv:Header/><soapenv:Body><impl:start> <xml>&lt;';
+	result+='req actDefId="" flowKey="gnccspjclfbxlc" subject="" \
+	account="010500088803" businessKey="">&lt;data>   &lt;![CDATA[{';
+	result+= '"main":{"fields":{"ssdw":"总部质量管理部","ssdwID":"1050010","ccrID":"10500088803","ccr":"毛瑞兵",\
+	"ygh":"010500088803","zwzc":"其他人员","fygkbm":"总部质量管理部","fygkbmID":"1050010","lxfs":"15456723542",\
+	"ccsy":"01无wbs签认，非包干，无差旅报销单","ccgjksrq":"2017-04-04","ccgjzzrq":"2017-04-25","ccksdd":"北京",\
+	"cczzdd":"天津","cczd":"上海","gsfy":"1342","jtgj":"普通列车硬座","dddw":"中软广州分公司","ccsm":"飞机","xmWBSwlh":"",\
+	"wbsqrr":"","ckrxm":"王明","zxqh":"9809098789097654","fj":"1","ndzys":"","sjfse":"","dbxze":"","syed":"",\
+	"bmshldID":"10000050828381","bmshld":"万国龙","bmspldID":"10500015024","bmspld":"宋晓文","fygkbmldID":"10500015024",\
+	"fygkbmld":"宋晓文","gsfgspldID":"10500015906","gsfgspld":"梁建英","sfczsqsp":"true","bxyccjzqts":"",\
+	"ccsqjtgjsfcb":"false","zsfsbsx":"false","ccts":"","cbzsfbzje":"","zsfybxje":"","zsfsjbxje":"","jzfybxje":"",\
+	"jtfsjbxje":"","czcfyybxje":"","czcfysjbxje":"","qtfybxje":"","qtfysjbxje":"","btje":"","fyzjdx":"零元",\
+	"fyzjxx":"0.00","txcbsx":"","zsfsbsxxk":"","cbzsfbxje":"0","cbzsfsm":"","cbzsfldspjg":"agree","cbjtfbxje":"0",\
+	"cbjtfsm":"","cbjtfldspjg":"agree","cbqtfybxje":"0","cbqtfysm":"","cbqtfyldspjg":"agree","xgfj":"",\
+	"jtgjdcsc":"单程","sfqrwbs":"false","xcsfbg":"否","sfcywhjk":"","sftxccbxd":""}},\
+	"sub":[{"tableName":"subtable_gnccspbxbd","fields":[]}],"opinion":[],"bianhao":[]}   ]]&gt;  &lt;/data>  \
+	 &lt;/req>';
+	result+='</xml></impl:start></soapenv:Body></soapenv:Envelope>';
+
+	$.ajax({
+				type: 'POST',
+				headers: {
+							'Content-Type':'text/plain;charset=UTF-8'
+						},
+				url:'http://122.4.80.27:8081/csrbpm/service/ProcessService',
+				data:result,
+				success: function(data) {
+					var tmp=data.getElementsByTagName("return")[0].childNodes[0].nodeValue;
+					if(tmp.indexOf("false")>=0){
+						alert('表单验证失败，请检查表单是否正确填写！');
+					}else if(tmp.indexOf("run")>=0){
+						alert('流程启动成功');
+
+					}else {
+					}
+				},
+				failure : function(response)
+				{
+					alert('无法连接服务器');
+				}
+			});
+
+
+
+	});

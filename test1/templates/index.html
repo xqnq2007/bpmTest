@@ -1,0 +1,145 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Blog Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+	<script src="{% static 'jquery-1.11.1.js' %}"></script>
+    <script src="{% static 'js/index.js' %}"></script>
+    <style>
+        .row-blank{
+            height:15px;
+        }
+        .label{
+            line-height:25px;
+            color: #000;
+            background-color: #fff;
+            font-size:14px;
+        }
+    </style>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="row-blank">
+                </div>
+                <span class="label"><h3>1 差旅审批</h3></span>
+                <div class="row-blank">
+                </div>
+                <div class="row-fluid">
+                    <div class="span8">
+                         <span class="label">1_1 无wbs签认，非包干，无差旅报销单</span>
+                    </div>
+                    <div class="span2">
+                         <button class="btn btn-primary" type="button" id="start1_1" onclick="start1('1_1')">发起</button>
+                    </div>
+                    <div class="span2">
+                         <button class="btn btn-success" type="button" id="test1_1" onclick="test1('1_1')">测试</button>
+                    </div>
+                </div>
+                <div class="row-blank">
+                </div>
+
+                <div class="row-fluid">
+                    <div class="span8">
+                         <span class="label">1_2 无wbs签认，非包干，有差旅报销单</span>
+                    </div>
+                    <div class="span2">
+                         <button class="btn btn-primary" type="button" id="start1_2" onclick="start1('1_2')">发起</button>
+                    </div>
+                    <div class="span2">
+                         <button class="btn btn-success" type="button" id="test1_2" onclick="test1('1_2')">测试</button>
+                    </div>
+                </div>
+                
+                <div class="row-blank">
+                </div>
+
+                <div class="row-fluid">
+                    <div class="span8">
+                         <span class="label">1_3 wbs签认，包干，无差旅报销单</span>
+                    </div>
+                    <div class="span2">
+                         <button class="btn btn-primary" type="button" id="start1_3" onclick="start1('1_3')">发起</button>
+                    </div>
+                    <div class="span2">
+                         <button class="btn btn-success" type="button" id="test1_3" onclick="test1('1_3')">测试</button>
+                    </div>
+                </div>
+
+                <div class="row-blank">
+                </div>
+
+                <div class="row-fluid">
+                    <div class="span8">
+                         <span class="label">1_4 wbs签认，包干，有差旅报销单</span>
+                    </div>
+                    <div class="span2">
+                         <button class="btn btn-primary" type="button" id="start1_4" onclick="start1('1_4')">发起</button>
+                    </div>
+                    <div class="span2">
+                         <button class="btn btn-success" type="button" id="test1_4" onclick="test1('1_4')">测试</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+	/*$("#start1_1").click(function(){
+	var result='<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/";
+	result+='xmlns:impl="http://impl.webservice.platform.hotent.com/"><soapenv:Header/><soapenv:Body><impl:start> <xml>&lt;';
+	result+='req actDefId="" flowKey="gnccspjclfbxlc" subject=""';
+	result+='account="010500088803" businessKey="">&lt;data>   &lt;![CDATA[{';
+	result+= '"main":{"fields":{"ssdw":"总部质量管理部","ssdwID":"1050010","ccrID":"10500088803","ccr":"毛瑞兵",\
+	"ygh":"010500088803","zwzc":"其他人员","fygkbm":"总部质量管理部","fygkbmID":"1050010","lxfs":"15456723542",\
+	"ccsy":"01无wbs签认，非包干，无差旅报销单","ccgjksrq":"2017-04-04","ccgjzzrq":"2017-04-25","ccksdd":"北京",\
+	"cczzdd":"天津","cczd":"上海","gsfy":"1342","jtgj":"普通列车硬座","dddw":"中软广州分公司","ccsm":"飞机","xmWBSwlh":"",\
+	"wbsqrr":"","ckrxm":"王明","zxqh":"9809098789097654","fj":"1","ndzys":"","sjfse":"","dbxze":"","syed":"",\
+	"bmshldID":"10000050828381","bmshld":"万国龙","bmspldID":"10500015024","bmspld":"宋晓文","fygkbmldID":"10500015024",\
+	"fygkbmld":"宋晓文","gsfgspldID":"10500015906","gsfgspld":"梁建英","sfczsqsp":"true","bxyccjzqts":"",\
+	"ccsqjtgjsfcb":"false","zsfsbsx":"false","ccts":"","cbzsfbzje":"","zsfybxje":"","zsfsjbxje":"","jzfybxje":"",\
+	"jtfsjbxje":"","czcfyybxje":"","czcfysjbxje":"","qtfybxje":"","qtfysjbxje":"","btje":"","fyzjdx":"零元",\
+	"fyzjxx":"0.00","txcbsx":"","zsfsbsxxk":"","cbzsfbxje":"0","cbzsfsm":"","cbzsfldspjg":"agree","cbjtfbxje":"0",\
+	"cbjtfsm":"","cbjtfldspjg":"agree","cbqtfybxje":"0","cbqtfysm":"","cbqtfyldspjg":"agree","xgfj":"",\
+	"jtgjdcsc":"单程","sfqrwbs":"false","xcsfbg":"否","sfcywhjk":"","sftxccbxd":""}},\
+	"sub":[{"tableName":"subtable_gnccspbxbd","fields":[]}],"opinion":[],"bianhao":[]}   ]]&gt;  &lt;/data>  \
+	 &lt;/req>';
+	result+='</xml></impl:start></soapenv:Body></soapenv:Envelope>';
+
+	$.ajax({
+				type: 'POST',
+				headers: {
+							'Content-Type':'text/plain;charset=UTF-8'
+						},
+				url:'http://122.4.80.27:8081/csrbpm/service/ProcessService',
+				data:result,
+				success: function(data) {
+					var tmp=data.getElementsByTagName("return")[0].childNodes[0].nodeValue;
+					if(tmp.indexOf("false")>=0){
+						alert('表单验证失败，请检查表单是否正确填写！');
+					}else if(tmp.indexOf("run")>=0){
+						alert('流程启动成功');
+
+					}else {
+					}
+				},
+				failure : function(response)
+				{
+					alert('无法连接服务器');
+				}
+			});
+
+
+
+	});*/
+</script>
+  </body>
+</html>
+
+
